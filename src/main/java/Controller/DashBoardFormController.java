@@ -31,4 +31,16 @@ public class DashBoardFormController {
         }
 
     }
+
+    public void itemButtonOnAction(ActionEvent actionEvent) {
+        Stage stage= (Stage) Pane.getScene().getWindow();
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/itemform.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
+

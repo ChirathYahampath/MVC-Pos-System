@@ -1,5 +1,6 @@
 Controller\CustomerFormController.class
 Controller\DashBoardFormController.class
 model\tm\CustomerTm.class
+Controller\Itemformcontroller.class
 AppInitializer.class
 model\Customer.class

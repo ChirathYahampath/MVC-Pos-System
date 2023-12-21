@@ -49,5 +49,6 @@
          <font>
             <Font name="Consolas" size="15.0" />
          </font></Text>
+      <Button fx:id="bckBtn" layoutX="14.0" layoutY="864.0" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="15.0" prefWidth="105.0" style="-fx-background-color: #012e21;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>
