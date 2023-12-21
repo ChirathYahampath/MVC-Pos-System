@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="Pane" prefHeight="540.0" prefWidth="837.0" style="-fx-background-color: #012e21;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardFormController">
    <children>
-      <JFXButton fx:id="CustomerBtn" layoutX="8.0" layoutY="6.0" onAction="#CustomerButtonOnAction" prefHeight="47.0" prefWidth="133.0" style="-fx-background-color: #000000;" text="Customer" textFill="#f6ff75">
+      <JFXButton fx:id="CustomerBtn" layoutX="8.0" layoutY="6.0" onAction="#CustomerButtonOnAction" prefHeight="47.0" prefWidth="133.0" style="-fx-background-color: black;" text="Customer" textFill="#f6ff75">
          <font>
             <Font name="Consolas" size="18.0" />
          </font></JFXButton>
