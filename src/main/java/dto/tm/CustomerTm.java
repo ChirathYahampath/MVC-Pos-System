@@ -1,4 +1,4 @@
-package model.tm;
+package dto.tm;
 
 
 import javafx.scene.control.Button;
@@ -11,6 +11,7 @@ public class CustomerTm {
     private Button btn;
 
     public CustomerTm(String string, String resultString, String address, double aDouble, java.awt.Button btn) {
+
     }
 
     public CustomerTm(String id, String name, String address, double salary, Button btn) {
