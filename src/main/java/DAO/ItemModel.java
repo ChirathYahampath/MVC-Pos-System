@@ -1,7 +1,6 @@
-package model;
+package DAO;
 
 import dto.itemDTO;
-
 
 import java.sql.SQLException;
 import java.util.List;

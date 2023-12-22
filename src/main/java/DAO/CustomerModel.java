@@ -1,6 +1,5 @@
-package model;
+package DAO;
 
-import dto.CustomerDTO;
 import dto.CustomerDTO;
 
 import java.sql.SQLException;

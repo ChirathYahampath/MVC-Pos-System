@@ -1,4 +1,4 @@
-package model.impl;
+package DAO.impl;
 
 public class OrderModelImpl {
 }

@@ -1,4 +1,4 @@
-package model;
+package DAO;
 
 public interface OrderModel {
 }

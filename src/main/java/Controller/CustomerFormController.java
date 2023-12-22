@@ -1,7 +1,6 @@
 package Controller;
 
 import com.jfoenix.controls.JFXTextField;
-import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,7 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import dto.CustomerDTO;
 import dto.tm.CustomerTm;
-import model.CustomerModel;
 import model.impl.CustomerModelImpl;
 
 import java.awt.event.ActionEvent;
