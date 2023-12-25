@@ -3,9 +3,9 @@ package Controller;
 import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import dto.CustomerDTO;
-import dto.itemDTO;
-import dto.OrderDetailsDTO;
 import dto.OrderDTO;
+import dto.OrderDetailsDTO;
+import dto.itemDTO;
 import dto.tm.OrderTm;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,12 +15,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
-import model.CustomerModel;
-import model.ItemModel;
-import model.OrderModel;
-import model.impl.CustomerModelImpl;
-import model.impl.ItemModelImpl;
-import model.impl.OrderModelImpl;
+import DAO.CustomerModel;
+import DAO.ItemModel;
+import DAO.OrderModel;
+import DAO.impl.CustomerModelImpl;
+import DAO.impl.ItemModelImpl;
+import DAO.impl.OrderModelImpl;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -44,13 +44,13 @@ public class PlaceOrderFormController {
     public Label lblTotal;
     public Label lblOrderId;
 
-    private List<CustomerDto> customers;
-    private List<ItemDto> items;
+    private List<CustomerDTO> customers;
+    private List<itemDTO> items;
     private double tot = 0;
 
     private CustomerModel customerModel = new CustomerModelImpl();
     private ItemModel itemModel = new ItemModelImpl();
-    private OrderModel orderModel = new OrderModelImpl();
+    private OrderModel OrderModel = (DAO.OrderModel) new OrderModelImpl();
 
     private ObservableList<OrderTm> tmList = FXCollections.observableArrayList();
 
@@ -67,7 +67,7 @@ public class PlaceOrderFormController {
         loadItemCodes();
 
         cmbCustId.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, id) -> {
-            for (CustomerDto dto:customers) {
+            for (CustomerDTO dto:customers) {
                 if (dto.getId().equals(id)){
                     txtCustName.setText(dto.getName());
                 }
@@ -75,7 +75,7 @@ public class PlaceOrderFormController {
         });
 
         cmbItemCode.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, code) -> {
-            for (ItemDto dto:items) {
+            for (itemDTO dto:items) {
                 if (dto.getCode().equals(code)){
                     txtDesc.setText(dto.getDesc());
                     txtUnitPrice.setText(String.format("%.2f",dto.getUnitPrice()));
@@ -88,7 +88,7 @@ public class PlaceOrderFormController {
         try {
             items = itemModel.allItems();
             ObservableList list = FXCollections.observableArrayList();
-            for (ItemDto dto:items) {
+            for (itemDTO dto:items) {
                 list.add(dto.getCode());
             }
             cmbItemCode.setItems(list);
@@ -103,7 +103,7 @@ public class PlaceOrderFormController {
         try {
             customers = customerModel.allCustomers();
             ObservableList list = FXCollections.observableArrayList();
-            for (CustomerDto dto:customers) {
+            for (CustomerDTO dto:customers) {
                 list.add(dto.getId());
             }
             cmbCustId.setItems(list);
@@ -169,7 +169,7 @@ public class PlaceOrderFormController {
 
     public void generateId(){
         try {
-            OrderDto dto = orderModel.lastOrder();
+            OrderDTO dto = OrderModel.lastOrder();
             if (dto!=null){
                 String id = dto.getOrderId();
                 int num = Integer.parseInt(id.split("[D]")[1]);
@@ -186,9 +186,9 @@ public class PlaceOrderFormController {
     }
 
     public void placeOrderButtonOnAction(ActionEvent actionEvent) {
-        List<OrderDetailsDto> list = new ArrayList<>();
+        List<OrderDetailsDTO> list = new ArrayList<>();
         for (OrderTm tm:tmList) {
-            list.add(new OrderDetailsDto(
+            list.add(new OrderDetailsDTO(
                     lblOrderId.getText(),
                     tm.getCode(),
                     tm.getQty(),
@@ -198,7 +198,7 @@ public class PlaceOrderFormController {
 //        if (!tmList.isEmpty()){
         boolean isSaved = false;
         try {
-            isSaved = orderModel.saveOrder(new OrderDto(
+            isSaved = OrderModel.saveOrder(new OrderDTO(
                     lblOrderId.getText(),
                     LocalDateTime.now().format(DateTimeFormatter.ofPattern("YYYY-MM-dd")),
                     cmbCustId.getValue().toString(),
