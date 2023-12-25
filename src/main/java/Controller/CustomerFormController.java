@@ -15,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import dto.CustomerDTO;
 import dto.tm.CustomerTm;
-import model.impl.CustomerModelImpl;
+import DAO.impl.CustomerModelImpl;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;

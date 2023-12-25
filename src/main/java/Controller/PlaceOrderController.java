@@ -28,7 +28,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaceOrderFormController {
+public class PlaceOrderController {
     public JFXComboBox cmbCustId;
     public JFXComboBox cmbItemCode;
     public JFXTextField txtCustName;
