@@ -4,7 +4,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import dto.CustomerDTO;
 import dto.itemDTO;
-import dto.OrderDetailsDto;
+import dto.OrderDetailsDTO;
 import dto.OrderDto;
 import dto.tm.OrderTm;
 import javafx.collections.FXCollections;
