@@ -8,15 +8,15 @@ import java.util.List;
 public interface CustomerModel {
     boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
-    boolean updateCustomer(CustomerDto dto) throws SQLException, ClassNotFoundException;
+    boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
     boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 
     boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
 
-    List<CustomerDto> allCustomers() throws SQLException, ClassNotFoundException;
+    List<CustomerDTO> allCustomers() throws SQLException, ClassNotFoundException;
 
-    CustomerDto searchCustomer(String id);
+    CustomerDTO searchCustomer(String id);
 
-    boolean saveCustomer(CustomerDto dto) throws SQLException, ClassNotFoundException;
+    boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 }

@@ -43,7 +43,7 @@ public class CustomerModelImpl implements CustomerModel {
     }
 
     @Override
-    public List<CustomerDto> allCustomers() throws SQLException, ClassNotFoundException {
+    public List<CustomerDTO> allCustomers() throws SQLException, ClassNotFoundException {
         List<CustomerDTO> list = new ArrayList<>();
 
         String sql = "SELECT * FROM customer";
