@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO.impl.CustomerModelImpl;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
