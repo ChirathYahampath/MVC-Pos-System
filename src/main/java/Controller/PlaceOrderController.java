@@ -18,7 +18,6 @@ import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import DAO.CustomerModel;
 import DAO.ItemModel;
 import DAO.OrderModel;
-import DAO.impl.CustomerModelImpl;
 import DAO.impl.ItemModelImpl;
 import DAO.impl.OrderModelImpl;
 
