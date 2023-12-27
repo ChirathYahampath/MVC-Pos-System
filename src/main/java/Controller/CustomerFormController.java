@@ -59,7 +59,7 @@ public class CustomerFormController {
     private TableColumn CollOption;
 
 
-    private CustomerModel CustomerModel = new CustomerModelImpl();
+    private CustomerModel CustomerModel = new CustomerModel();
     @FXML
     void SaveButtonOnAction(ActionEvent event) {
 
